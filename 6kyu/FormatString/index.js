@@ -10,4 +10,14 @@ function list(names){
   var string = arr.join('');
   return string;
 }
-list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}])
+list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}]);
+
+//Clever solution
+function list(names){
+  return names.reduce(function(prev, current, index, array) {
+    if(index === 0) return current.name;
+    else if(index === array.length - 1) return prev + ' & ' + current.name;
+    else return prev + ', ' + current.name;
+  }, '');
+}
+list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}]);

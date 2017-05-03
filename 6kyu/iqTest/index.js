@@ -23,3 +23,19 @@ function iqTest(numbers){
   return odd.length > even.length ? numbers.indexOf(even[0])+1 : numbers.indexOf(odd[0])+1;
 }
 iqTest("2 4 7 8 10");
+
+//ES6 version
+
+function iqTest(numbers){
+  numbers = numbers.split(' ').map(elem => {
+    return parseInt(elem);
+  })
+  var odd = numbers.filter(elem => {
+    return elem % 2 !== 0;
+  })
+  var even = numbers.filter(elem => {
+    return elem % 2 === 0;
+  })
+  return even.length > odd.length ? numbers.indexOf(odd[0]) + 1 : numbers.indexOf(even[0]) + 1;
+}
+iqTest("2 4 7 8 10")

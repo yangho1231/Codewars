@@ -4,3 +4,4 @@ function array_diff(a, b) {
   })
   return result;
 }
+array_diff([1,2,2,2,3],[2]);
